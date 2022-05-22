@@ -8,4 +8,5 @@ import { MatButtonToggleGroup } from '@angular/material/button-toggle';
 })
 export class AppComponent {
   title = 'material-demo';
+  selectedValue!: string;
 }

@@ -1,12 +1,16 @@
-<!-- inputs,textareas,select all are wrapped inside form-field -->
-<mat-form-field color="warn" appearance="legacy" floatLabel="never" hideRequiredMarker>
-  <mat-label>Name</mat-label>
-  <input matInput required>
-  <mat-hint align="end">Min 5 characters</mat-hint>
+<mat-form-field>
+  <mat-label>Topic</mat-label>
+  <mat-select [(value)]="selectedValue" multiple>
+    <mat-option>None</mat-option>
+    <mat-optgroup label="Web">
+      <mat-option value="angular">Angular</mat-option>
+      <mat-option value="react">React</mat-option>
+      <mat-option value="vue">Vue</mat-option>
+    </mat-optgroup>
+    <mat-optgroup label="Mobile">
+      <mat-option value="ionic">Ionic</mat-option>
+      <mat-option value="reactnative">React Native</mat-option>
+    </mat-optgroup>
+  </mat-select>
 </mat-form-field>
-
-<!-- floatLabel ---never,always,auto -->
-<!-- required -- will add the asterisk ( we could hide it using hideRequiredMarker attribute) -->
-<!-- appearance  -filled,outline,legacy,standard -->
-<!-- error integration -refer  -->
-
+{{selectedValue}}
