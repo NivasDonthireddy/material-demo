@@ -14,7 +14,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatCardModule} from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatStepperModule} from '@angular/material/stepper';
-
+import {MatInputModule} from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 const material = [
   MatButtonModule,
@@ -31,7 +32,9 @@ const material = [
   MatExpansionModule,
   MatCardModule,
   MatTabsModule,
-  MatStepperModule
+  MatStepperModule,
+  MatInputModule,
+  MatFormFieldModule
 ];
 
 @NgModule({
