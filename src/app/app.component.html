@@ -1,16 +1,10 @@
-<mat-form-field>
-  <mat-label>Topic</mat-label>
-  <mat-select [(value)]="selectedValue" multiple>
-    <mat-option>None</mat-option>
-    <mat-optgroup label="Web">
-      <mat-option value="angular">Angular</mat-option>
-      <mat-option value="react">React</mat-option>
-      <mat-option value="vue">Vue</mat-option>
-    </mat-optgroup>
-    <mat-optgroup label="Mobile">
-      <mat-option value="ionic">Ionic</mat-option>
-      <mat-option value="reactnative">React Native</mat-option>
-    </mat-optgroup>
-  </mat-select>
-</mat-form-field>
-{{selectedValue}}
+<form>
+  <mat-form-field>
+    <input type="text" matInput [matAutocomplete]="auto" [formControl]="myControl" />
+  </mat-form-field>
+  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+      {{option}}
+    </mat-option>
+  </mat-autocomplete>
+</form>
