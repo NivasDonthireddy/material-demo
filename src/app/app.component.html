@@ -1,44 +1,33 @@
-<mat-list dense>
-  <mat-list-item>Item-1</mat-list-item>
-  <mat-list-item>Item-2</mat-list-item>
-  <mat-list-item>Item-3</mat-list-item>
-</mat-list>
+<mat-accordion multi hideToggle>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Angular Fundamentals</mat-panel-title>
+      <mat-panel-description>
+        Total Duration: 3 hours
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>This is the panel content. Add Course details</p>
+    <mat-action-row>
+      <button mat-flat-button>Enroll</button>
+    </mat-action-row>
+  </mat-expansion-panel>
 
-<!-- dense -text size is reduced for list items -->
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Angular Fundamentals</mat-panel-title>
+      <mat-panel-description>
+        Total Duration: 3 hours
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>This is the panel content. Add Course details</p>
+    <mat-action-row>
+      <button mat-flat-button>Enroll</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
 
-<!-- Good place to use the below is sidenav component -->
-<mat-nav-list >
-  <a mat-list-item >Home</a>
-  <a mat-list-item >About</a>
-  <a mat-list-item >Services</a>
-</mat-nav-list>
+<!-- Accordin - multiple expansion panels grouped together -->
 
-<mat-list>
-  <mat-list-item>
-    <mat-icon matListIcon>home</mat-icon>
-    <h3 matLine>Heading</h3>
-    <p matLine>Line</p>
-  </mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item>
-    <mat-icon matListIcon>folder</mat-icon>
-    <h3 matLine>Heading</h3>
-    <p matLine>Line</p>
-  </mat-list-item>
-</mat-list>
+<!-- There are methods to open and close the panels programatically 
+and also events to know when the panel is expaned or collapsed-->
 
-
-<mat-grid-list cols="2" rowHeight="fit" style="height: 200px;" gutterSize="10px">
-  <mat-grid-tile colspan="2">Tile 1</mat-grid-tile>
-  <mat-grid-tile>Tile 2</mat-grid-tile>
-  <mat-grid-tile>Tile 3</mat-grid-tile>
-  <mat-grid-tile>Tile 4</mat-grid-tile>
-</mat-grid-list>
-
-<!-- rowspan -->
-<!-- colspan  - shouldnt exceed the cols attribute-->
-
-<!-- height of grid is by default equal to width of the column1 -->
-<!-- rowheight   -100px,2:1(col: row ration),fit(takes the container height) -->
-
-<!-- gutter size (spacing between the grids) -->
