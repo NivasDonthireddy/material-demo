@@ -13,4 +13,8 @@ export class AppComponent {
   log(state: any) {
     console.log(state);
   }
+
+  logChange(val: any){
+    console.log(val);
+  }
 }
