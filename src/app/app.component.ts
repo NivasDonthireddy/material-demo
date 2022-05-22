@@ -8,6 +8,7 @@ import { MatButtonToggleGroup } from '@angular/material/button-toggle';
 })
 export class AppComponent implements AfterViewInit{
   title = 'material-demo';
+  notifications = 2;
   @ViewChild('toggleGroup') toggleSelection!: MatButtonToggleGroup;
 
   ngAfterViewInit(): void {

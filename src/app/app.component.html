@@ -1,10 +1,26 @@
+<!-- Icons -->
 
-<mat-button-toggle #toggle checked="true" disableRipple="false" disabled="true">basic</mat-button-toggle>
-{{toggle.checked}}
+<!-- just text ni google icons nunchi choosi marustunte icon marutundhi. -->
+<mat-icon color="basic">close</mat-icon>
 
-<mat-button-toggle-group #toggleGroup="matButtonToggleGroup" multiple>
-  <mat-button-toggle value="angular">Angular</mat-button-toggle>
-  <mat-button-toggle value="react">React</mat-button-toggle>
-  <mat-button-toggle value="vue">Vue</mat-button-toggle>
-</mat-button-toggle-group>
-{{toggleGroup.value}}
+
+
+<!-- Badges -->
+
+<div>
+  <span [matBadge]="notifications" matBadgePosition="above after"
+  matBadgeSize="medium" matBadgeOverlap="false"
+  matBadgeColor="accent"
+  [matBadgeHidden]="notifications === 0"
+  >
+    Notifications</span>
+</div>
+
+<!-- matBadgePosition above before,above after, below before, below after -->
+<!-- matBadgeSize small, large, medium -->
+<!-- matBadgeColor primary,accent,warn -->
+<!-- matBadgeOverlap  false  ---for icons it is advised to overlap and not for texts -->
+<!-- matBadgeHidden   Conditional display of badge-->
+
+
+
