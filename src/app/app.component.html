@@ -1,38 +1,44 @@
-<mat-menu #appMenu="matMenu" xPosition="after" yPosition="above">
-  <button mat-menu-item [matMenuTriggerFor]="subMenu">FrontEnd</button>
-  <button mat-menu-item>BackEnd</button>
-</mat-menu>
+<mat-list dense>
+  <mat-list-item>Item-1</mat-list-item>
+  <mat-list-item>Item-2</mat-list-item>
+  <mat-list-item>Item-3</mat-list-item>
+</mat-list>
 
-<button mat-flat-button [mat-menu-trigger-for]="appMenu" style="margin:10rem">Menu</button>
+<!-- dense -text size is reduced for list items -->
 
-<!-- to be able to see the menu we need to call it programatically 
-1. add a template reference variable and assign it to the directive matMenu
-2. link the button with template ref var with matMenuTriggerFor Directive
--->
+<!-- Good place to use the below is sidenav component -->
+<mat-nav-list >
+  <a mat-list-item >Home</a>
+  <a mat-list-item >About</a>
+  <a mat-list-item >Services</a>
+</mat-nav-list>
 
-<!-- Creating nested View -->
-<mat-menu #subMenu="matMenu">
-  <button mat-menu-item>Angular</button>
-  <button mat-menu-item>React</button>
-  <button mat-menu-item>Vue</button>
-</mat-menu>
+<mat-list>
+  <mat-list-item>
+    <mat-icon matListIcon>home</mat-icon>
+    <h3 matLine>Heading</h3>
+    <p matLine>Line</p>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>
+    <mat-icon matListIcon>folder</mat-icon>
+    <h3 matLine>Heading</h3>
+    <p matLine>Line</p>
+  </mat-list-item>
+</mat-list>
 
-<!-- xPosition after,before -->
-<!-- yPosition above,below -->
 
-<!-- LazyRendering  -->
-<!-- by default the menu choices are initialized even before the menu is opened. we can defer initialization untli the menu is opened using ngTemplateDirective and matmenucontent attribute.
-This will allow us to have the dynamic content as menu choices.
--->
+<mat-grid-list cols="2" rowHeight="fit" style="height: 200px;" gutterSize="10px">
+  <mat-grid-tile colspan="2">Tile 1</mat-grid-tile>
+  <mat-grid-tile>Tile 2</mat-grid-tile>
+  <mat-grid-tile>Tile 3</mat-grid-tile>
+  <mat-grid-tile>Tile 4</mat-grid-tile>
+</mat-grid-list>
 
-<mat-menu #lazyMenu="matMenu">
-  <ng-template matMenuContent let-name="name" let-hobby="hobby">
-    <button mat-menu-item>Settings</button>
-    <button mat-menu-item>Log out - {{name}}</button>
-    <button mat-menu-item>Hobby is - {{hobby}}</button>
-  </ng-template>
-</mat-menu>
+<!-- rowspan -->
+<!-- colspan  - shouldnt exceed the cols attribute-->
 
-<button mat-flat-button [matMenuTriggerFor]="lazyMenu" [matMenuTriggerData]="{name: 'Vishwas', hobby: 'cricket'}">Vishwas</button>
-<button mat-flat-button [matMenuTriggerFor]="lazyMenu" [matMenuTriggerData]="{name: 'Codevolution',hobby: 'football'}">Codevolution</button>
+<!-- height of grid is by default equal to width of the column1 -->
+<!-- rowheight   -100px,2:1(col: row ration),fit(takes the container height) -->
 
+<!-- gutter size (spacing between the grids) -->
