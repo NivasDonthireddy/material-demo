@@ -1,22 +1,38 @@
-<!-- Toolbar  - for creating navbar-->
-<mat-toolbar color="primary" class="navbar">
-  <div>Codevolution</div>
-  <div>
-    <span>Home</span>
-    <span>About</span>
-    <span>Services</span>
-  </div>
-</mat-toolbar>
+<mat-menu #appMenu="matMenu" xPosition="after" yPosition="above">
+  <button mat-menu-item [matMenuTriggerFor]="subMenu">FrontEnd</button>
+  <button mat-menu-item>BackEnd</button>
+</mat-menu>
 
-<!-- SideNav -->
-<mat-sidenav-container>
-  <mat-sidenav [(opened)]="opened" (opened)="log('opened')" (closed)="log('closed')" mode="side" #sidenav>SideNav</mat-sidenav>
-  <mat-sidenav-content>Main
-    <button (click)="opened = !opened">Toggle Opened</button>
-    <button (click)="sidenav.open()">open</button>
-    <button (click)="sidenav.close()">close</button>
-    <button (click)="sidenav.toggle()">Toggle</button>
-  </mat-sidenav-content>
-</mat-sidenav-container>
-<!--mode  over,push,side -->
+<button mat-flat-button [mat-menu-trigger-for]="appMenu" style="margin:10rem">Menu</button>
+
+<!-- to be able to see the menu we need to call it programatically 
+1. add a template reference variable and assign it to the directive matMenu
+2. link the button with template ref var with matMenuTriggerFor Directive
+-->
+
+<!-- Creating nested View -->
+<mat-menu #subMenu="matMenu">
+  <button mat-menu-item>Angular</button>
+  <button mat-menu-item>React</button>
+  <button mat-menu-item>Vue</button>
+</mat-menu>
+
+<!-- xPosition after,before -->
+<!-- yPosition above,below -->
+
+<!-- LazyRendering  -->
+<!-- by default the menu choices are initialized even before the menu is opened. we can defer initialization untli the menu is opened using ngTemplateDirective and matmenucontent attribute.
+This will allow us to have the dynamic content as menu choices.
+-->
+
+<mat-menu #lazyMenu="matMenu">
+  <ng-template matMenuContent let-name="name" let-hobby="hobby">
+    <button mat-menu-item>Settings</button>
+    <button mat-menu-item>Log out - {{name}}</button>
+    <button mat-menu-item>Hobby is - {{hobby}}</button>
+  </ng-template>
+</mat-menu>
+
+<button mat-flat-button [matMenuTriggerFor]="lazyMenu" [matMenuTriggerData]="{name: 'Vishwas', hobby: 'cricket'}">Vishwas</button>
+<button mat-flat-button [matMenuTriggerFor]="lazyMenu" [matMenuTriggerData]="{name: 'Codevolution',hobby: 'football'}">Codevolution</button>
 
