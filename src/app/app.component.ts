@@ -8,13 +8,4 @@ import { MatButtonToggleGroup } from '@angular/material/button-toggle';
 })
 export class AppComponent {
   title = 'material-demo';
-  opened: boolean = false;
-
-  log(state: any) {
-    console.log(state);
-  }
-
-  logChange(val: any){
-    console.log(val);
-  }
 }

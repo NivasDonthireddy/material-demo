@@ -1,6 +1,30 @@
-<mat-tab-group #tabRef (selectedTabChange)="logChange(tabRef.selectedIndex)">
-  <mat-tab label="Angular">Angular Content</mat-tab>
-  <mat-tab label="React">React Content</mat-tab>
-  <mat-tab label="Vue">Vue Content</mat-tab>
-</mat-tab-group>
-{{tabRef.selectedIndex}}
+<!-- Horizontal Stepper -->
+<mat-horizontal-stepper linear>
+  <mat-step label="Shipping Address">Shipping Address Details</mat-step>
+  <mat-step label="Billing Address" completed="false">
+    <p>Billing Address Details</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+    </div>
+  </mat-step>
+  <mat-step label="Place Order" completed="false">Order Details</mat-step>
+</mat-horizontal-stepper>
+
+<!-- Linear steppers to restrict jumps- completed true ayinappudu matrame user ni next step ki allow chestundhi. -->
+<!-- completed should generally be property binding dynamically -->
+
+<!-- Vertical Stepper -->
+<mat-vertical-stepper linear>
+  <mat-step label="Shipping Address">Shipping Address Details</mat-step>
+  <mat-step label="Billing Address" completed="false">
+    <p>Billing Address Details</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+    </div>
+  </mat-step>
+  <mat-step label="Place Order" completed="false">Order Details</mat-step>
+</mat-vertical-stepper>
+
+
