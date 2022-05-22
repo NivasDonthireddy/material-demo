@@ -8,13 +8,19 @@ import { MatButtonToggleGroup } from '@angular/material/button-toggle';
 })
 export class AppComponent implements AfterViewInit{
   title = 'material-demo';
-  notifications = 2;
+  showSpinner:boolean= false;
   @ViewChild('toggleGroup') toggleSelection!: MatButtonToggleGroup;
 
   ngAfterViewInit(): void {
     this.toggleSelection.valueChange.subscribe(console.log);
   }
 
+  loadData(){
+    this.showSpinner = true;
+    setTimeout(()=> {
+      this.showSpinner = false;
+    },5000)
+  }
 
 
 

@@ -1,26 +1,9 @@
-<!-- Icons -->
+<!-- we can bind the value programatically to indicate the progress dynamically -->
+<mat-progress-spinner value="40"></mat-progress-spinner>
 
-<!-- just text ni google icons nunchi choosi marustunte icon marutundhi. -->
-<mat-icon color="basic">close</mat-icon>
+<!-- spinner that spins indifinetely -->
+<mat-spinner *ngIf="showSpinner" color="accent"></mat-spinner>
+<button (click)="loadData()">Load Data</button>
 
-
-
-<!-- Badges -->
-
-<div>
-  <span [matBadge]="notifications" matBadgePosition="above after"
-  matBadgeSize="medium" matBadgeOverlap="false"
-  matBadgeColor="accent"
-  [matBadgeHidden]="notifications === 0"
-  >
-    Notifications</span>
-</div>
-
-<!-- matBadgePosition above before,above after, below before, below after -->
-<!-- matBadgeSize small, large, medium -->
-<!-- matBadgeColor primary,accent,warn -->
-<!-- matBadgeOverlap  false  ---for icons it is advised to overlap and not for texts -->
-<!-- matBadgeHidden   Conditional display of badge-->
-
-
+<!-- Progress Bar Indicator -- refere resources -->
 
